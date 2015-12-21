@@ -1,0 +1,48 @@
+package test;
+import static org.junit.Assert.*;
+
+import gradeSystem.GradeSystems;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestShowGrade {
+
+	final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	GradeSystems gradeSystems = null;
+
+	@Before
+	public void setUp() throws Exception {
+		System.setOut(new PrintStream(outContent));
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		//System.setOut(null);
+	}
+
+	@Test
+	public void test() {
+		String predictOutput = "­â©v§Ê¦¨ÁZ:\tlab1:\t\t87\r\n\t\t"
+				+ "lab2:\t\t86\r\n" + "\t\t" + "lab3:\t\t98\r\n" + "\t\t"
+				+ "mid-term:\t88" + "\r\n\t\t" + "final exam:\t87" + "\r\n\t\t"
+				+ "total grade:\t88\r\n";
+		gradeSystems.showGrade("962001044");
+		assertEquals(predictOutput, outContent.toString());
+	}
+
+	@Test
+	public void test2() {
+		String predictOutput = "§õ«Â§Ê¦¨ÁZ:\tlab1:\t\t81\r\n\t\t"
+				+ "lab2:\t\t98\r\n" + "\t\t" + "lab3:\t\t84\r\n" + "\t\t"
+				+ "mid-term:\t90" + "\r\n\t\t" + "final exam:\t93" + "\r\n\t\t"
+				+ "total grade:\t91\r\n";
+		gradeSystems.showGrade("962001051");
+		assertEquals(predictOutput, outContent.toString());
+	}
+}

@@ -1,0 +1,63 @@
+package test;
+
+import static org.junit.Assert.*;
+import gradeSystem.GradeSystems;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestDeleteGrade {
+	final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	GradeSystems gradeSystems = null;
+
+	@Before
+	public void setUp() throws Exception {
+		System.setOut(new PrintStream(outContent));
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"962001051 Y".getBytes());
+		System.setIn(inContent);
+		gradeSystems.deleteGrade("962001044");
+		String predictOutput = "";
+		 predictOutput = predictOutput+"Student ID:\r\n" + "以上正確嗎? Y (Yes) 或 N (No)\r\n";
+		 
+		assertEquals(predictOutput, outContent.toString());
+	}
+
+	@Test
+	public void test2() {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"962001051 N".getBytes());
+		System.setIn(inContent);
+		gradeSystems.deleteGrade("962001044");
+		String predictOutput = "";
+		 predictOutput = predictOutput+"Student ID:\r\n" + "以上正確嗎? Y (Yes) 或 N (No)\r\n";
+		 
+		assertEquals(predictOutput, outContent.toString());
+	}
+
+	@Test
+	public void test3() {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"962001044".getBytes());
+		System.setIn(inContent);
+		gradeSystems.deleteGrade("962001044");
+		String predictOutput = "";
+		 predictOutput = predictOutput+"Student ID:\r\n" + "不能刪除自己!\r\n";
+		 
+		assertEquals(predictOutput, outContent.toString());
+	}
+}

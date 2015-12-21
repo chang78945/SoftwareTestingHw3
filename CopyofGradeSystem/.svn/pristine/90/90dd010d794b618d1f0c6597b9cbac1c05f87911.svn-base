@@ -1,0 +1,46 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class TestCalculateTotalGrade {
+	GradeSystems gradeSystems;
+	@Before
+	public void setUp() throws Exception {
+		gradeSystems = new GradeSystems();
+	}
+
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test1() {
+		Grades grades = new Grades();
+		grades.setLab1Score(70);
+		grades.setLab2Score(70);
+		grades.setLab3Score(70);
+		grades.setMidTermScore(70);
+		grades.setFinalExamScore(70);
+		gradeSystems.aGradeList.add(grades);
+		gradeSystems.aGradeList.get(0).calculateTotalGrade(0.1, 0.2, 0.2, 0.2, 0.3);
+		assertEquals(70, grades.getTotalGrade());	
+	}
+	@Test
+	public void test2() {
+		Grades grades = new Grades();
+		grades.setLab1Score(60);
+		grades.setLab2Score(60);
+		grades.setLab3Score(60);
+		grades.setMidTermScore(60);
+		grades.setFinalExamScore(60);
+		gradeSystems.aGradeList.add(grades);
+		gradeSystems.aGradeList.get(0).calculateTotalGrade(0.1, 0.2, 0.2, 0.2, 0.3);
+		assertEquals(60, grades.getTotalGrade());	
+	}
+
+	
+}

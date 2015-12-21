@@ -1,0 +1,6 @@
+package gradesystemInterface;
+
+public interface GradesInterface {
+	public void calculateTotalGrade(double lab1Weight, double lab2Weight,
+			double lab3Weight, double midTermWeight, double finalExamWeight);
+}

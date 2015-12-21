@@ -1,0 +1,18 @@
+package gradesystemInterface;
+
+import exception.NoSuchIDExceptions;
+
+public interface GradeSystemsInterface {
+	public boolean containsID(String ID) throws NoSuchIDExceptions;
+
+	public void deleteGrade(String userID);
+
+	public void insertGrade();
+
+	public void showGrade(String a);
+
+	public void showRank(String a);
+
+	public void updateWeights();
+
+}

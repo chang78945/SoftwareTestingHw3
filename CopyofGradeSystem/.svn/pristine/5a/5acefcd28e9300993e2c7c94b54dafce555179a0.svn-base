@@ -1,0 +1,32 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class TestShowGrade {
+
+	GradeSystems gradeSystems = null;
+	@Before
+	public void setUp() throws Exception {
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		final  ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut (new PrintStream (outContent));
+		gradeSystems.showGrade("1");
+		assertEquals("c\r\n", outContent);
+
+	}
+
+}

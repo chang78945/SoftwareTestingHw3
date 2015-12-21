@@ -1,0 +1,77 @@
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class GradeSystems {
+	ArrayList<Grades> aGradeList;
+
+<<<<<<< .mine
+public class GradeSystems 
+{
+	Array
+	public boolean containsID(String ID)  // 看aGradeSystem有否含此ID
+=======
+	public boolean containsID(String ID) // 看aGradeSystem有否含此ID
+>>>>>>> .r13
+	{
+		return false;
+
+	}
+
+	public GradeSystems() {
+		aGradeList = new ArrayList<Grades>();
+		// Test Code Start
+		Grades grades1 = new Grades();
+		grades1.setID("1");
+		grades1.setName("abc");
+		grades1.setLab1Score(75);
+		grades1.setLab2Score(75);
+		grades1.setLab3Score(75);
+		grades1.setMidTermScore(75);
+		grades1.setFinalExamScore(75);
+
+		Grades grades2 = new Grades();
+		grades2.setID("2");
+		grades2.setLab1Score(65);
+		grades2.setLab2Score(65);
+		grades2.setLab3Score(65);
+		grades2.setMidTermScore(65);
+		grades2.setFinalExamScore(65);
+		// End
+	}
+
+	public void showGrade(String ID) {
+//		for (int i = 0; i < 1; i++) {
+//			if (aGradeList.get(i).getID().equals(ID)) {
+//				System.out.println(aGradeList.get(i).getName()
+//						+ "成績：lab1：     " + aGradeList.get(i).getLab1Score());
+//				System.out.println("\t" + "lab2：     "
+//						+ aGradeList.get(i).getLab2Score());
+//				System.out.println("\t" + "lab3：     "
+//						+ aGradeList.get(i).getLab3Score());
+//				System.out.println("\t" + "mid-term :：     "
+//						+ aGradeList.get(i).getMidTermScore());
+//				System.out.println("\t" + "final exam：     "
+//						+ aGradeList.get(i).getFinalExamScore());
+//				System.out.println("\t" + "total grade : "
+//						+ aGradeList.get(i).getTotalGrade());
+				System.out.println("c");
+//				break;
+			}
+//		}
+//	}
+
+	public void showRank(String ID) {
+
+	}
+
+	public void updateWeights() {
+
+	}
+}
+// class GradeSystems儲存 a list of student grades.
+// containsID(ID) // 看aGradeSystem有否含此ID
+// GradeSystems () //建構子
+// showGrade(ID)
+// showRank(ID)
+// updateWeights ()

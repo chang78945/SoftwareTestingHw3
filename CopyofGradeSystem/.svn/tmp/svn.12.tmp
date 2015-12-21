@@ -1,0 +1,99 @@
+package gradeSystem;
+
+import java.util.Scanner;
+
+import exception.NoSuchCommandExceptions;
+import exception.NoSuchIDExceptions;
+
+/**
+ * *********************************************************************** class
+ * UI (user interface)
+ * 
+ * checkID(ID) promptCommand() promptID() showFinishMsg() showWelcomeMsg() UI()
+ * 建構子 建構 aGradeSystem
+ ************************************************************************ */
+
+public class UI {
+	private GradeSystems aGradeSystems;
+	private String userID = null;
+	private String userName = null;
+	private boolean isQuit = false;
+	private boolean isExit = false;
+
+	public UI() throws NoSuchIDExceptions, NoSuchCommandExceptions {
+		aGradeSystems = new GradeSystems();
+		Scanner scanner = new Scanner(System.in);
+
+		while (!isQuit) {
+			promptID();
+			String input = scanner.next().trim();
+			if (checkID(input)) {
+				isExit = false;
+				userID = input;
+				showWelcomeMsg();
+				while (!isExit) {
+					promptCommand();
+				}
+			} else if (input.equals("Q")) {
+				isQuit = true;
+			}
+		}
+		showFinishMsg();
+
+	}
+
+	public boolean checkID(String ID) {
+		for (int i = 0; i < aGradeSystems.aList.size(); i++)
+			if (aGradeSystems.aList.get(i).getID().equals(ID)) {
+				userName = aGradeSystems.aList.get(i).getName();
+				return true;
+			}
+		return false;
+	}
+
+	public void promptCommand() throws NoSuchCommandExceptions {
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next().trim();
+		if (input.equals("G")) {
+			aGradeSystems.showGrade(userID);
+		} else if (input.equals("E")) {
+			isExit = true;
+		} else if (input.equals("R")) {
+			aGradeSystems.showRank(userID);
+		} else if (input.equals("W")) {
+			aGradeSystems.updateWeights();
+		} else if (input.equals("I")) {
+			aGradeSystems.insertGrade();
+		} else if (input.equals("D")) {
+			aGradeSystems.deleteGrade(userID);
+		}
+
+	}
+
+	public void promptID() {
+		System.out.print("輸入ID或 Q (結束使用)? ");
+	}
+
+	public void showFinishMsg() {
+		System.out.println("結束了.");
+	}
+
+	public void showWelcomeMsg() {
+		System.out.println("Welcome " + userName);
+		System.out
+				.println("輸入指令 \t1) G 顯示成績 (Grade)\n \t2) R 顯示排名 (Rank)\n \t3) W 更新配分 (Weight)\n \t4) I 新增學號 (Insert)\n \t5) D 刪除學號 (Delete)\n \t6) E 離開選單 (Exit)");
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+}
+// class UI (user interface)
+// checkID(ID)
+// promptCommand()
+// promptID()
+// showFinishMsg()
+// showWelcomeMsg()
+// UI() 建構子 建構 aGradeSystem
+

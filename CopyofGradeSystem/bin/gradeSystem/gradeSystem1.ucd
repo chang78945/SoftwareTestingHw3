@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="gradeSystem1" size="1086,1210" id="gradeSystem" metadata="uml2-1.0" initialized="true" scrolledX="28" scrolledY="9" tag="10" key="32303037303533312D313020477261646553797374656D">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="Grades" location="50,50" size="148,229" id="gradeSystem/Grades">
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,144">
+      <children xsi:type="editmodel:AttributeEditModel" name="finalExam" id="gradeSystem/Grades#finalExam"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="iD" id="gradeSystem/Grades#iD"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab1" id="gradeSystem/Grades#lab1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab2" id="gradeSystem/Grades#lab2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab3" id="gradeSystem/Grades#lab3"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="midTerm" id="gradeSystem/Grades#midTerm"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="gradeSystem/Grades#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="totalGrade" id="gradeSystem/Grades#totalGrade"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="125,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Grades" id="gradeSystem/Grades#Grades()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="calculateTotalGrade" id="gradeSystem/Grades#calculateTotalGrade(DDDDD)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="gradeSystem/Grades@aList+gradeSystem/GradeSystems@" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="aList" location="148,96" id="gradeSystem/Grades@aList+gradeSystem/GradeSystems@|gradeSystem/Grades#aList" attachSource="true" multiplicityLabel="//@children.0/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ aList" location="205,125" size="35,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="205,153" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,82" id="gradeSystem/Grades@aList+gradeSystem/GradeSystems@|gradeSystem/GradeSystems#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.3/@sourceConnections.0" name="UI" location="555,165" size="145,193" id="gradeSystem/UI">
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="userID" id="gradeSystem/UI#userID"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userName" id="gradeSystem/UI#userName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="122,108">
+      <children xsi:type="editmodel:MethodEditModel" name="UI" id="gradeSystem/UI#UI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkID" id="gradeSystem/UI#checkID(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptCommand" id="gradeSystem/UI#promptCommand()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptID" id="gradeSystem/UI#promptID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showFinishMsg" id="gradeSystem/UI#showFinishMsg()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showWelcomeMsg" id="gradeSystem/UI#showWelcomeMsg()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="gradeSystem/UI-Standard::Call->gradeSystem/GradeSystems*gradeSystem/UI-Standard::Instantiate->gradeSystem/GradeSystems*gradeSystem/UI-Soyatec::Import->gradeSystem/GradeSystems" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Call, Import»" size="119,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,96" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="203,186"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.1/@sourceConnections.0" name="GradeSystems" location="300,75" size="203,301" id="gradeSystem/GradeSystems">
+    <children xsi:type="editmodel:CompartmentEditModel" size="180,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="bufferedReader" id="gradeSystem/GradeSystems#bufferedReader"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="finalExamWeight" id="gradeSystem/GradeSystems#finalExamWeight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab1Weight" id="gradeSystem/GradeSystems#lab1Weight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab2Weight" id="gradeSystem/GradeSystems#lab2Weight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab3Weight" id="gradeSystem/GradeSystems#lab3Weight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="midTermWeight" id="gradeSystem/GradeSystems#midTermWeight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="uIUserName" id="gradeSystem/GradeSystems#uIUserName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,126">
+      <children xsi:type="editmodel:MethodEditModel" name="GradeSystems" id="gradeSystem/GradeSystems#GradeSystems()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="containsID" id="gradeSystem/GradeSystems#containsID(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteGrade" id="gradeSystem/GradeSystems#deleteGrade(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertGrade" id="gradeSystem/GradeSystems#insertGrade()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showGrade" id="gradeSystem/GradeSystems#showGrade(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showRank" id="gradeSystem/GradeSystems#showRank(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateWeights" id="gradeSystem/GradeSystems#updateWeights()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="gradeSystem/GradeSystems@aGradeSystems+gradeSystem/UI@" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="aGradeSystems" location="203,155" id="gradeSystem/GradeSystems@aGradeSystems+gradeSystem/UI@|gradeSystem/GradeSystems#aGradeSystems" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - aGradeSystems" location="510,209" size="88,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="510,237" size="6,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,76" id="gradeSystem/GradeSystems@aGradeSystems+gradeSystem/UI@|gradeSystem/UI#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="gradeSystem/GradeSystems-Standard::Call->gradeSystem/Grades*gradeSystem/GradeSystems-Standard::Instantiate->gradeSystem/Grades*gradeSystem/GradeSystems-Soyatec::Import->gradeSystem/Grades" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Call, Import»" size="119,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,102" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="148,127"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Main" location="765,138" size="295,103" id="gradeSystem/Main">
+    <children xsi:type="editmodel:CompartmentEditModel" size="272,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nO_SUCH_COMMAND_EXCEPTIONS_STRING" id="gradeSystem/Main#nO_SUCH_COMMAND_EXCEPTIONS_STRING"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nO_SUCH_ID_EXCEPTIONS_STRING" id="gradeSystem/Main#nO_SUCH_ID_EXCEPTIONS_STRING"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="gradeSystem/Main#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="gradeSystem/Main-Standard::Instantiate->gradeSystem/UI*gradeSystem/Main-Soyatec::Import->gradeSystem/UI" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import»" size="96,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,65" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="145,38"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

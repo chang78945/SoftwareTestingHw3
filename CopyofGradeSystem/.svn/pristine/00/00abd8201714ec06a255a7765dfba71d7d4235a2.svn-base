@@ -1,0 +1,9 @@
+package gradeSystem;
+
+public class Main {
+	public static void main(String[] args) {
+		UI aUi = new UI();
+	}
+}
+// class Main
+// main ( )

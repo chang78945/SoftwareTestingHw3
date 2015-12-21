@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1059,371" id="gradeSystem" metadata="uml2-1.0" initialized="true" zoom="2.5" scrolledY="47" tag="10" key="32303037303533312D313020477261646553797374656D">
+  <children xsi:type="editmodel:ClassEditModel" name="Grades" location="303,50" size="148,229" id="gradeSystem/Grades" runTimeClassModel="midTerm,totalGrade,name,finalExam,Grades(),calculateTotalGrade(DDDDD),lab3,iD,lab1,lab2">
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,144">
+      <children xsi:type="editmodel:AttributeEditModel" name="finalExam" id="gradeSystem/Grades#finalExam"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="iD" id="gradeSystem/Grades#iD"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab1" id="gradeSystem/Grades#lab1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab2" id="gradeSystem/Grades#lab2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab3" id="gradeSystem/Grades#lab3"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="midTerm" id="gradeSystem/Grades#midTerm"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="gradeSystem/Grades#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="totalGrade" id="gradeSystem/Grades#totalGrade"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="125,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Grades" id="gradeSystem/Grades#Grades()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="calculateTotalGrade" id="gradeSystem/Grades#calculateTotalGrade(DDDDD)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GradeSystems" location="50,50" size="203,301" id="gradeSystem/GradeSystems" runTimeClassModel="lab2Weight,midTermWeight,lab1Weight,GradeSystems(),insertGrade(),updateWeights(),showGrade(Ljava.lang.String;),containsID(Ljava.lang.String;),bufferedReader,lab3Weight,finalExamWeight,uIUserName,showRank(Ljava.lang.String;),deleteGrade(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="180,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="bufferedReader" id="gradeSystem/GradeSystems#bufferedReader"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="finalExamWeight" id="gradeSystem/GradeSystems#finalExamWeight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab1Weight" id="gradeSystem/GradeSystems#lab1Weight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab2Weight" id="gradeSystem/GradeSystems#lab2Weight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lab3Weight" id="gradeSystem/GradeSystems#lab3Weight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="midTermWeight" id="gradeSystem/GradeSystems#midTermWeight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="uIUserName" id="gradeSystem/GradeSystems#uIUserName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,126">
+      <children xsi:type="editmodel:MethodEditModel" name="GradeSystems" id="gradeSystem/GradeSystems#GradeSystems()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="containsID" id="gradeSystem/GradeSystems#containsID(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteGrade" id="gradeSystem/GradeSystems#deleteGrade(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertGrade" id="gradeSystem/GradeSystems#insertGrade()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showGrade" id="gradeSystem/GradeSystems#showGrade(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showRank" id="gradeSystem/GradeSystems#showRank(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateWeights" id="gradeSystem/GradeSystems#updateWeights()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Main" location="501,50" size="295,103" id="gradeSystem/Main" runTimeClassModel="main([Ljava.lang.String;),nO_SUCH_COMMAND_EXCEPTIONS_STRING,nO_SUCH_ID_EXCEPTIONS_STRING">
+    <children xsi:type="editmodel:CompartmentEditModel" size="272,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nO_SUCH_COMMAND_EXCEPTIONS_STRING" id="gradeSystem/Main#nO_SUCH_COMMAND_EXCEPTIONS_STRING"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nO_SUCH_ID_EXCEPTIONS_STRING" id="gradeSystem/Main#nO_SUCH_ID_EXCEPTIONS_STRING"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="gradeSystem/Main#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="UI" location="846,50" size="145,193" id="gradeSystem/UI" runTimeClassModel="userID,UI(),promptCommand(),showFinishMsg(),userName,promptID(),showWelcomeMsg(),checkID(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="userID" id="gradeSystem/UI#userID"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userName" id="gradeSystem/UI#userName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="122,108">
+      <children xsi:type="editmodel:MethodEditModel" name="UI" id="gradeSystem/UI#UI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkID" id="gradeSystem/UI#checkID(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptCommand" id="gradeSystem/UI#promptCommand()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptID" id="gradeSystem/UI#promptID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showFinishMsg" id="gradeSystem/UI#showFinishMsg()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showWelcomeMsg" id="gradeSystem/UI#showWelcomeMsg()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

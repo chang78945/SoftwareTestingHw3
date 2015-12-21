@@ -1,0 +1,67 @@
+package gradeSystem;
+
+import java.util.Scanner;
+/** ***********************************************************************
+class UI (user interface) 
+
+checkID(ID)
+promptCommand()
+promptID()
+showFinishMsg()
+showWelcomeMsg()
+UI() 建構子 建構 aGradeSystem
+************************************************************************ */
+
+public class UI {
+	private GradeSystems aGradeSystems;
+
+	public UI() {
+		aGradeSystems = new GradeSystems();
+	}
+
+	public boolean checkID(String ID) {
+		for(int i = 0 ;i<aGradeSystems.aList.size(); i++)
+			if(aGradeSystems.aList.get(i).getID().equals(ID)){
+				return true;
+			}
+		return false;
+	}
+
+	public void promptCommand() {
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next().trim();
+		while (input != null) {
+			if (input.equals("G")){
+				
+			} else if(input.equals("E")){
+				
+			} else if(input.equals("R")){
+				
+			} else if(input.equals("W")){
+				
+			} 
+		}
+
+	}
+
+	public void promptID() {
+
+	}
+
+	public void showFinishMsg() {
+
+	}
+
+	public void showWelcomeMsg() {
+		System.out.println("");
+	}
+
+}
+// class UI (user interface)
+// checkID(ID)
+// promptCommand()
+// promptID()
+// showFinishMsg()
+// showWelcomeMsg()
+// UI() 建構子 建構 aGradeSystem
+

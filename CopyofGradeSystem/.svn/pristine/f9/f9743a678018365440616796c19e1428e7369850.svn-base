@@ -1,0 +1,17 @@
+package gradesystemInterface;
+
+import exception.NoSuchCommandExceptions;
+import exception.NoSuchIDExceptions;
+
+public interface UIInterface {
+	public boolean checkID(String ID) throws NoSuchIDExceptions;
+
+	public void promptCommand() throws NoSuchCommandExceptions;
+
+	public void promptID();
+
+	public void showFinishMsg();
+
+	public void showWelcomeMsg();
+
+}

@@ -1,0 +1,45 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
+
+import gradeSystem.GradeSystems;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestUpdateWeights {
+	GradeSystems gradeSystems = null;
+
+	@Before
+	public void setUp() throws Exception {
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		final ByteArrayInputStream  inContent = new ByteArrayInputStream("10". getBytes());
+		System.setIn (inContent);
+		gradeSystems.updateWeights();
+		final ByteArrayInputStream  inContent2 = new ByteArrayInputStream("0.2". getBytes());
+		System.setIn (inContent2);
+		final ByteArrayInputStream  inContent3 = new ByteArrayInputStream("0.3". getBytes());
+		System.setIn (inContent3);
+		final ByteArrayInputStream  inContent4 = new ByteArrayInputStream("0.4". getBytes());
+		System.setIn (inContent4);
+		final ByteArrayInputStream  inContent5 = new ByteArrayInputStream("0.5". getBytes());
+		System.setIn (inContent5);
+		final ByteArrayInputStream  inContent6 = new ByteArrayInputStream("Y". getBytes());
+		System.setIn (inContent6);
+		
+
+	}
+
+}

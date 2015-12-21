@@ -1,0 +1,128 @@
+package test;
+
+import static org.junit.Assert.*;
+import exception.NoSuchCommandExceptions;
+import gradeSystem.UI;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TeatPromptCommand {
+
+	final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	UI aUI = null;
+	@Before
+	public void setUp() throws Exception {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"Q".getBytes());
+		System.setIn(inContent);
+		System.setOut(new PrintStream(outContent));
+		aUI = new UI();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test1G() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001044");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"G".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput+"凌宗廷成績:\tlab1:\t\t87\r\n\t\t"
+				+ "lab2:\t\t86\r\n" + "\t\t" + "lab3:\t\t98\r\n" + "\t\t"
+				+ "mid-term:\t88" + "\r\n\t\t" + "final exam:\t87" + "\r\n\t\t"
+				+ "total grade:\t88\r\n";
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	}
+
+	@Test
+	public void testE() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001044");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"E".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	} 
+	@Test
+	public void test1R() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001044");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"R".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput+"凌宗廷排名第2\r\n" ;
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	} 
+	@Test
+	public void testW() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001044");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"W ".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput+"舊配分\r\n" ;
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	} 
+
+	@Test
+	public void testI() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001044");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"I ".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput + "Student ID:";
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	} 
+	@Test
+	public void testD() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001044");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"D ".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput + "Student ID:\r\n";
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	} 
+	@Test
+	public void test2G() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001051");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"G".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput+"李威廷成績:\tlab1:\t\t81\r\n\t\t"
+				+ "lab2:\t\t98\r\n" + "\t\t" + "lab3:\t\t84\r\n" + "\t\t"
+				+ "mid-term:\t90" + "\r\n\t\t" + "final exam:\t93" + "\r\n\t\t"
+				+ "total grade:\t91\r\n";
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	}
+	
+	@Test
+	public void test2R() throws NoSuchCommandExceptions {
+		aUI.setUserID("962001051");
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"R".getBytes());
+		System.setIn(inContent);
+		String predictOutput = "輸入ID或 Q (結束使用)? "+"結束了.\r\n";
+		predictOutput = predictOutput+"李威廷排名第1\r\n" ;
+		aUI.promptCommand();
+		assertEquals(predictOutput, outContent.toString());
+	} 
+}

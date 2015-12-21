@@ -1,0 +1,40 @@
+package test;
+
+import static org.junit.Assert.*;
+import exception.NoSuchIDExceptions;
+import gradeSystem.GradeSystems;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestContainsID {
+
+	GradeSystems gradeSystems = null;
+	@Before
+	public void setUp() throws Exception {
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		try {
+			assertEquals(true, gradeSystems.containsID("962001044"));
+		} catch (NoSuchIDExceptions e) {
+			// TODO Auto-generated catch block
+		}
+	}
+
+	@Test
+	public void test2() {
+		try {
+			assertEquals(false, gradeSystems.containsID("100001425"));
+		} catch (NoSuchIDExceptions e) {
+			// TODO Auto-generated catch block
+		}
+	}
+}

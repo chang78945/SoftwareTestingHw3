@@ -1,0 +1,67 @@
+package test;
+
+import static org.junit.Assert.*;
+import gradeSystem.GradeSystems;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestInsertGrade {
+	final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	GradeSystems gradeSystems = null;
+
+	@Before
+	public void setUp() throws Exception {
+		System.setOut(new PrintStream(outContent));
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"955002056  許文馨 88 92 88 98 91 Y".getBytes());
+		System.setIn(inContent);
+		gradeSystems.insertGrade();
+		String predictOutput = "";
+		predictOutput = predictOutput + "Student ID:" + "Student Name:"
+				+ "lab1:" + "lab2:" + "lab3:" + "midTerm:"
+				+ "finalExam:";
+		 predictOutput = predictOutput + "請確認資料:\r\n"+ "新使用者ID\t\t"+"955002056\r\n"+"新名稱\t\t"+"許文馨\r\n"+"lab1\t\t"
+				 + 88 + "\r\nlab2\t\t"
+				 + 92 + "\r\nlab3\t\t"
+				 + 88 + "\r\nmid-term\t"
+				 + 98 + "\r\nfinal exam\t"
+				 + 91 + "\r\n";
+		predictOutput = predictOutput + "以上正確嗎? Y (Yes) 或 N (No)\r\n";
+		assertEquals(predictOutput, outContent.toString());
+	}
+
+	@Test
+	public void test2() {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"955002056  許文馨 88 92 88 98 91 N".getBytes());
+		System.setIn(inContent);
+		gradeSystems.insertGrade();
+		String predictOutput = "";
+		predictOutput = predictOutput + "Student ID:" + "Student Name:"
+				+ "lab1:" + "lab2:" + "lab3:" + "midTerm:"
+				+ "finalExam:";
+		 predictOutput = predictOutput + "請確認資料:\r\n"+ "新使用者ID\t\t"+"955002056\r\n"+"新名稱\t\t"+"許文馨\r\n"+"lab1\t\t"
+				 + 88 + "\r\nlab2\t\t"
+				 + 92 + "\r\nlab3\t\t"
+				 + 88 + "\r\nmid-term\t"
+				 + 98 + "\r\nfinal exam\t"
+				 + 91 + "\r\n";
+		predictOutput = predictOutput + "以上正確嗎? Y (Yes) 或 N (No)\r\n";
+		assertEquals(predictOutput, outContent.toString());
+	}
+}

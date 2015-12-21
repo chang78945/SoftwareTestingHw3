@@ -1,0 +1,38 @@
+
+public class UI 
+{
+	public boolean checkID(String ID)
+	{
+		
+		return false;
+		
+	}
+	public void promptCommand()
+	{
+		
+	}
+	public void promptID()
+	{
+		
+	}
+	public void showFinishMsg()
+	{
+		
+	}
+	public void showWelcomeMsg()
+	{
+		
+	}
+	public UI()
+	{
+		
+	}
+}
+//class UI (user interface) 
+//checkID(ID)
+//promptCommand()
+//promptID()
+//showFinishMsg()
+//showWelcomeMsg()
+//UI() «Øºc¤l «Øºc aGradeSystem
+

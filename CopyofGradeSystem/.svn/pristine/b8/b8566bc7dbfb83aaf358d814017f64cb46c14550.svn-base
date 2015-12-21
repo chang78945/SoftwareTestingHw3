@@ -1,0 +1,51 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import exception.NoSuchIDExceptions;
+import gradeSystem.GradeSystems;
+import gradeSystem.UI;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestCheckID {
+
+	UI aUI = null;
+
+	@Before
+	public void setUp() throws Exception {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"Q".getBytes());
+		System.setIn(inContent);
+		aUI = new UI();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+//要去改containsID的source code
+	@Test
+	public void test() {
+		try {
+			assertEquals(true, aUI.checkID("962001044"));
+		} catch (NoSuchIDExceptions e) {
+			// TODO Auto-generated catch block
+		}
+	}
+
+	@Test
+	public void test2() {
+		try {
+			assertEquals(null, aUI.checkID("100001425"));
+		} catch (NoSuchIDExceptions e) {
+			// TODO Auto-generated catch block
+		}
+	}
+
+}

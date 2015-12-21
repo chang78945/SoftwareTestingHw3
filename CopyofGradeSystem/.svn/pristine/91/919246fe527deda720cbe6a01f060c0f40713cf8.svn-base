@@ -1,0 +1,118 @@
+package gradeSystem;
+
+import java.util.Scanner;
+
+import exception.NoSuchCommandExceptions;
+import exception.NoSuchIDExceptions;
+import gradesystemInterface.UIInterface;
+
+public class UI implements UIInterface {
+	private GradeSystems aGradeSystems;
+	private String userID = null;
+	private String userName = null;
+	private boolean isQuit = false;
+	private boolean isExit = false;
+
+	// checkID (ID) throws NoSuchIDExceptions return Boolean
+	// 1. 要aGradeSystem 做containsID(ID) 看 ID 是否含在 aGradeSystem內
+	// 2. if not, throw an object of NoSuchIDExceptions
+	// 3. 回傳 true
+	// O(n)
+	public boolean checkID(String ID) throws NoSuchIDExceptions {
+		return aGradeSystems.containsID(ID);
+	}
+
+	// promptCommand () throws NoSuchCommandExceptions
+	// 1. prompt user for inputCommand
+	// 2. if inputCommand is not G (Grade),R (Rank), W (Weights), or E (Exit),
+	// throws an object of NoSuchCommandException
+	// 3. if inputCommand is E (Exit) then break
+	// else: G aGradeSystem.showGrade(ID), R showRank(ID), W updateWeights() end
+	// if
+	// O(n)
+	public void promptCommand() throws NoSuchCommandExceptions {
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next().trim();
+		if (input.equals("G")) {
+			aGradeSystems.showGrade(userID);
+		} else if (input.equals("E")) {
+			isExit = true;
+		} else if (input.equals("R")) {
+			aGradeSystems.showRank(userID);
+		} else if (input.equals("W")) {
+			aGradeSystems.updateWeights();
+		} else if (input.equals("I")) {
+			aGradeSystems.insertGrade();
+		} else if (input.equals("D")) {
+			aGradeSystems.deleteGrade(userID);
+		} else {
+			throw new NoSuchCommandExceptions();
+		}
+	}
+
+	// O(1)
+	public void promptID() {
+		System.out.print("輸入ID或 Q (結束使用)? ");
+	}
+
+	// O(1)
+	public void showFinishMsg() {
+		System.out.println("結束了.");
+	}
+
+	// O(1)
+	public void showWelcomeMsg() {
+		System.out.println("Welcome " + userName);
+		System.out
+				.println("輸入指令 \t1) G 顯示成績 (Grade)\n \t2) R 顯示排名 (Rank)\n \t3) W 更新配分 (Weight)\n \t4) I 新增學號 (Insert)\n \t5) D 刪除學號 (Delete)\n \t6) E 離開選單 (Exit)");
+	}
+
+	// UI() 建構子 throws NoSuchIDExceptions, NoSuchCommandExceptions
+	// try
+	// 1.call GradeSystems() to建構 aGradeSystem
+	//
+	// 2.loop1 until Q (Quit)
+	// 1. promptID() to get user ID 輸入ID或 Q (結束使用)？
+	// 2. checkID (ID) 看 ID 是否在 aGradeSystem內
+	// 3. showWelcomeMsg (ID) ex. Welcome李威廷
+	// 4. loop2 until E (Exit)
+	// promptCommand() to prompt for inputCommand
+	// end loop2
+	// end loop1
+	// 3.showFinishMsg() 結束了
+	// end try
+	// finally {}
+	public UI() throws NoSuchIDExceptions, NoSuchCommandExceptions {
+		aGradeSystems = new GradeSystems();
+		Scanner scanner = new Scanner(System.in);
+
+		while (!isQuit) {
+			promptID();
+			String input = scanner.next().trim();
+
+			if (input.equals("Q")) {
+				isQuit = true;
+			} else if (checkID(input)) {
+				userName = aGradeSystems.getUIUserName();
+				isExit = false;
+				userID = input;
+				showWelcomeMsg();
+				while (!isExit) {
+					promptCommand();
+				}
+			} else {
+				throw new NoSuchIDExceptions();
+			}
+		}
+		showFinishMsg();
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+
+}

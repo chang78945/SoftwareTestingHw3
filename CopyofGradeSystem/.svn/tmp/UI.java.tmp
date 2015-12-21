@@ -1,0 +1,91 @@
+package gradeSystem;
+
+<<<<<<< .mine
+public class UI 
+{
+	public boolean checkID(String ID)
+	{
+		
+=======
+import java.util.Scanner;
+/** ***********************************************************************
+class UI (user interface) 
+
+checkID(ID)
+promptCommand()
+promptID()
+showFinishMsg()
+showWelcomeMsg()
+UI() 建構子 建構 aGradeSystem
+************************************************************************ */
+
+public class UI {
+	private GradeSystems aGradeSystems;
+
+	public UI() {
+		aGradeSystems = new GradeSystems();
+>>>>>>> .r7
+		return false;
+//		checkID (ID) throws NoSuchIDExceptions return Boolean
+//				parameter: ID   a user ID  ex: 123456789
+//				time:     O(n)  n is  aGradeSystem 內全班人數
+	}
+
+	public boolean checkID(String ID) {
+		for(int i = 0 ;i<aGradeSystems.aList.size(); i++)
+			if(aGradeSystems.aList.get(i).getID().equals(ID)){
+				return true;
+			}
+		return false;
+	}
+
+	public void promptCommand() {
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next().trim();
+		while (input != null) {
+			if (input.equals("G")){
+				
+			} else if(input.equals("E")){
+				
+			} else if(input.equals("R")){
+				
+			} else if(input.equals("W")){
+				
+			} 
+		}
+
+	}
+
+	public void promptID() {
+
+	}
+
+	public void showFinishMsg() {
+
+	}
+
+	public void showWelcomeMsg() {
+		System.out.println("");
+//		loop1 until Q (Quit)
+//		1.	promptID() to get user ID  輸入ID或 Q (結束使用)？ 
+//		2.	checkID (ID) 看 ID 是否在 aGradeSystem內
+//		3.	showWelcomeMsg (ID)      ex. Welcome李威廷
+//		4.	loop2 until E (Exit)
+//		promptCommand() to prompt for inputCommand 
+//		    end loop2
+//		end loop1
+//		3.showFinishMsg()           結束了
+//		end try
+//		finally {}
+
+	}
+
+}
+// class UI (user interface)
+// checkID(ID)
+// promptCommand()
+// promptID()
+// showFinishMsg()
+// showWelcomeMsg()
+// UI() 建構子 建構 aGradeSystem
+

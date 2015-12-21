@@ -1,0 +1,9 @@
+package gradeSystem;
+
+public class Main {
+	public static void main(String[] args) throws NoSuchCommandExceptions {
+		UI aUi = new UI();
+	}
+}
+// class Main
+// main ( )

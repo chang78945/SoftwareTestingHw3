@@ -1,0 +1,74 @@
+package gradeSystem;
+
+public class Grades 
+{
+	private String ID;
+	private String name;
+	private int lab1;
+	private int lab2;
+	private int lab3;
+	private int midTerm;
+	private int finalExam;
+	private int totalGrade;
+
+
+//	public calculateTotalGrade(weights) {totalGrade須四捨五入}
+	public void calculateTotalGrade(double lab1Weight,double lab2Weight,double lab3Weight,double midTermWeight,double finalExamWeight)
+	{
+		totalGrade=(int)Math.round(lab1*lab1Weight+lab2*lab2Weight+lab3*lab3Weight+midTerm*midTermWeight+finalExam*finalExamWeight);
+	}
+	
+	//public Grades () { } //建構子
+	public Grades ()
+	{ 
+		
+	} 
+	public void setID(String iD) {
+		ID = iD;
+	}
+	public String getID() {
+		return ID;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getTotalGrade() {
+		return totalGrade;
+	}
+	public void setFinalExam(int finalExam) {
+		this.finalExam = finalExam;
+	}
+	public void setLab1(int lab1) {
+		this.lab1 = lab1;
+	}
+	public void setLab2(int lab2) {
+		this.lab2 = lab2;
+	}
+	public void setLab3(int lab3) {
+		this.lab3 = lab3;
+	}
+	public void setMidTerm(int midTerm) {
+		this.midTerm = midTerm;
+	}
+	public void setTotalGrade(int totalGrade) {
+		this.totalGrade = totalGrade;
+	}
+	public int getLab1() {
+		return lab1;
+	}
+	public int getLab2() {
+		return lab2;
+	}
+	public int getLab3() {
+		return lab3;
+	}
+	public int getMidTerm() {
+		return midTerm;
+	}
+	public int getFinalExam() {
+		return finalExam;
+	}
+}

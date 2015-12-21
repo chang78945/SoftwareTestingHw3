@@ -1,0 +1,57 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
+
+import gradeSystem.GradeSystems;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestUpdateWeights {
+	final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	GradeSystems gradeSystems = null;
+
+	@Before
+	public void setUp() throws Exception {
+		System.setOut(new PrintStream(outContent));
+		gradeSystems = new GradeSystems();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		final ByteArrayInputStream inContent = new ByteArrayInputStream(
+				"10 10 10 30 40 Y".getBytes());
+		System.setIn(inContent);
+		gradeSystems.updateWeights();
+		String predictOutput = "";
+		 predictOutput = predictOutput+"舊配分\r\n" + "lab1\t\t"
+		 + gradeSystems.getLab1Weight() * 100 + "%\r\nlab2\t\t"
+		 + gradeSystems.getLab2Weight() * 100 + "%\r\nlab3\t\t"
+		 + gradeSystems.getLab3Weight() * 100 + "%\r\nmid-term\t"
+		 + gradeSystems.getMidTermWeight() * 100 + "%\r\nfinal exam\t"
+		 + gradeSystems.getFinalExamWeight() * 100 + "%\r\n";
+		 predictOutput = predictOutput + "新配分\r\n" + "lab1\t\t" + "lab2\t\t"
+		 + "lab3\t\t" + "mid-term\t" + "final exam\t";
+		 predictOutput = predictOutput + "請確認新配分\r\n" + "lab1\t\t"
+		 + gradeSystems.getTemps()[0] + "%\r\nlab2\t\t"
+		 + gradeSystems.getTemps()[1] + "%\r\nlab3\t\t"
+		 + gradeSystems.getTemps()[2] + "%\r\nmid-term\t"
+		 + gradeSystems.getTemps()[3] + "%\r\nfinal exam\t"
+		 + gradeSystems.getTemps()[4] + "%\r\n";
+		 
+		predictOutput = predictOutput + "以上正確嗎? Y (Yes) 或 N (No)\r\n";
+		assertEquals(predictOutput, outContent.toString());
+
+	}
+
+}
